@@ -1,9 +1,17 @@
+import Detail from "./Detail";
+import Meals from "./Meals";
 import "./index.css";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./Navbar";
 
 const App = () => {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+    <div className="container mx-auto relative">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Meals />} />
+        <Route path="/detail/:id" element={<Detail />} />
+      </Routes>
     </div>
   );
 };
